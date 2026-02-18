@@ -1,0 +1,84 @@
+---
+import Container from "../layout/Container.astro";
+import Button from "../ui/Button.astro";
+import Badge from "../ui/Badge.astro";
+import HeroImage from "../ui/HeroImage.astro";
+---
+
+<section class="relative overflow-hidden pt-10 pb-16 lg:pt-14 lg:pb-20">
+  <!-- Blue silhouette background -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-50/30 to-indigo-50/40 dark:from-blue-950/30 dark:via-blue-950/20 dark:to-indigo-950/20"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-blue-100/60 blur-3xl dark:bg-blue-900/20"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-indigo-100/50 blur-3xl dark:bg-indigo-900/15"
+  >
+  </div>
+
+  <Container class="relative">
+    <div class="grid items-center gap-10 lg:grid-cols-2">
+      <!-- Left Column -->
+      <div data-animate="fade-left">
+        <Badge text="Trusted by 500+ companies" />
+        <h1
+          class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-gray-100 sm:text-5xl lg:text-5xl"
+        >
+          Build Your Future With The <span
+            class="text-orange-500 dark:text-orange-400">Right Opportunity</span
+          >
+        </h1>
+        <p
+          class="mt-4 text-base leading-relaxed text-slate-500 dark:text-gray-400"
+        >
+          We connect top talent with leading employers across industries.
+          Whether you're looking for daily staffing solutions or permanent
+          placement, we've got you covered.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <Button variant="primary" size="lg" href="#solutions"
+            >Find Talent</Button
+          >
+          <Button variant="outline" size="lg" href="#categories"
+            >Browse Jobs</Button
+          >
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-8 flex gap-6">
+          <div>
+            <div class="text-xl font-bold text-slate-900 dark:text-gray-100">
+              10K+
+            </div>
+            <div class="text-xs text-slate-500 dark:text-gray-400">
+              Placements Made
+            </div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-slate-900 dark:text-gray-100">
+              500+
+            </div>
+            <div class="text-xs text-slate-500 dark:text-gray-400">
+              Partner Companies
+            </div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-slate-900 dark:text-gray-100">
+              98%
+            </div>
+            <div class="text-xs text-slate-500 dark:text-gray-400">
+              Client Satisfaction
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Image Collage -->
+      <HeroImage class="mt-8 lg:mt-0" data-animate="fade-right" />
+    </div>
+  </Container>
+</section>

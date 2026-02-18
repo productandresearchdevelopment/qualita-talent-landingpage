@@ -1,0 +1,67 @@
+---
+import Container from "../layout/Container.astro";
+import Card from "../ui/Card.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import { Icon } from "astro-icon/components";
+
+const steps = [
+  {
+    icon: "solar:users-group-rounded-bold-duotone",
+    title: "Expert Recruiters",
+    description:
+      "Industry specialists matching the right candidates with the highest quality roles.",
+  },
+  {
+    icon: "solar:bolt-circle-bold-duotone",
+    title: "Fast Placement",
+    description:
+      "Fill positions within 48 hours with our extensive pre-verified talent pool.",
+  },
+  {
+    icon: "solar:shield-check-bold-duotone",
+    title: "Verified Talent",
+    description:
+      "Every candidate is pre-screened and background checked before placement.",
+  },
+  {
+    icon: "solar:wallet-money-bold-duotone",
+    title: "Fair Pricing",
+    description:
+      "Transparent and competitive staffing rates with no hidden fees.",
+  },
+];
+---
+
+<section id="why-us" class="bg-blue-50/40 py-14 dark:bg-gray-900/50">
+  <Container>
+    <SectionHeader
+      title="Why Choose Qualita Talent"
+      subtitle="We combine technology and human expertise to deliver staffing solutions that truly make a difference."
+      data-animate="fade-up"
+    />
+
+    <div
+      class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      data-animate-stagger
+    >
+      {
+        steps.map((step, i) => (
+          <Card class="text-center" data-animate="fade-up">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+              <Icon name={step.icon} class="h-8 w-8" />
+            </div>
+            <div class="mt-2 inline-flex items-center justify-center rounded-full bg-orange-500 px-2.5 py-0.5 text-xs font-bold text-white">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 class="mt-3 text-lg font-bold text-gray-900 dark:text-gray-100">
+              {step.title}
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              {step.description}
+            </p>
+          </Card>
+        ))
+      }
+    </div>
+  </Container>
+</section>

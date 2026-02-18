@@ -1,0 +1,79 @@
+---
+import Container from "./Container.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
+import Button from "../ui/Button.astro";
+---
+
+<nav
+  class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg dark:border-gray-800 dark:bg-gray-950/80"
+  aria-label="Main navigation"
+>
+  <Container class="flex h-16 items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img
+        src="/qualita-talent.png"
+        alt="Qualita Indonesia"
+        class="h-16 w-auto dark:brightness-0 dark:invert"
+      />
+    </a>
+
+    <!-- Center Links -->
+    <div class="hidden items-center gap-8 md:flex">
+      <a
+        href="#solutions"
+        class="nav-link relative text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        >Solutions</a
+      >
+      <a
+        href="#why-us"
+        class="nav-link relative text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        >Why Us</a
+      >
+      <a
+        href="#categories"
+        class="nav-link relative text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        >Categories</a
+      >
+      <a
+        href="#contact"
+        class="nav-link relative text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        >Contact</a
+      >
+    </div>
+
+    <!-- Right Side -->
+    <div class="flex items-center gap-2">
+      <DarkModeToggle />
+      <Button variant="primary" size="sm">Post a Job</Button>
+    </div>
+  </Container>
+</nav>
+
+<script is:inline>
+  // Highlight active nav link based on scroll position
+  (function () {
+    const links = document.querySelectorAll(".nav-link");
+    const sections = [];
+    links.forEach(function (link) {
+      var id = link.getAttribute("href");
+      if (id && id.startsWith("#")) {
+        var el = document.querySelector(id);
+        if (el) sections.push({ el: el, link: link });
+      }
+    });
+    function update() {
+      var scrollY = window.scrollY + 100;
+      var active = null;
+      sections.forEach(function (s) {
+        if (s.el.offsetTop <= scrollY) active = s;
+      });
+      links.forEach(function (l) {
+        l.classList.remove("active");
+      });
+      if (active) active.link.classList.add("active");
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  })();
+</script>

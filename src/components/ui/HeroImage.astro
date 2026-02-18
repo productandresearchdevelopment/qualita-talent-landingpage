@@ -1,0 +1,70 @@
+---
+interface Props {
+  class?: string;
+  [key: string]: any;
+}
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<div {...attrs} class:list={["relative", className]}>
+  <!-- Mobile: single featured image -->
+  <div class="block lg:hidden">
+    <div
+      class="overflow-hidden rounded-2xl border border-gray-200 shadow-lg dark:border-gray-800"
+    >
+      <img
+        src="/hero_1.jpg"
+        alt="Professional team collaborating"
+        class="h-56 w-full object-cover sm:h-72"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Desktop: 3-image collage grid -->
+  <div class="hidden lg:block">
+    <div class="grid grid-cols-2 gap-4">
+      <!-- Large image spanning left column -->
+      <div
+        class="row-span-2 overflow-hidden rounded-2xl border border-gray-200 shadow-sm dark:border-gray-800"
+      >
+        <img
+          src="/hero_1.jpg"
+          alt="Professional team collaborating"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Top right image -->
+      <div
+        class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm dark:border-gray-800"
+      >
+        <img
+          src="/hero_2.jpg"
+          alt="Talent recruitment process"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Bottom right image -->
+      <div
+        class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm dark:border-gray-800"
+      >
+        <img
+          src="/hero_3.avif"
+          alt="Workplace environment"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative accent -->
+  <div
+    class="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl bg-gradient-to-br from-orange-100 to-indigo-100 dark:from-orange-900/20 dark:to-indigo-900/20"
+  >
+  </div>
+</div>

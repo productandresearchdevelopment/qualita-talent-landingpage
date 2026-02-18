@@ -1,0 +1,86 @@
+---
+import Container from "../layout/Container.astro";
+import Card from "../ui/Card.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import { Icon } from "astro-icon/components";
+
+const solutions = [
+  {
+    icon: "solar:clock-circle-bold-duotone",
+    title: "Daily Worker Staffing",
+    description: "Flexible daily staffing for your on-demand workforce needs.",
+    features: [
+      "Same-day worker deployment",
+      "Pre-vetted and trained staff",
+      "Flexible scheduling options",
+      "Real-time attendance tracking",
+    ],
+    color: "orange",
+  },
+  {
+    icon: "solar:case-bold-duotone",
+    title: "Permanent Placement",
+    description: "Find the right long-term talent for your growing team.",
+    features: [
+      "Rigorous candidate screening",
+      "Cultural fit assessment",
+      "Skill-based matching",
+      "90-day replacement guarantee",
+    ],
+    color: "indigo",
+  },
+  {
+    icon: "solar:document-text-bold-duotone",
+    title: "Contract Staffing",
+    description: "Project-based professionals for fixed-term engagements.",
+    features: [
+      "Project-scoped contracts",
+      "Specialized skill pools",
+      "Payroll management",
+      "Compliance handling",
+    ],
+    color: "emerald",
+  },
+];
+---
+
+<section id="solutions" class="py-14">
+  <Container>
+    <SectionHeader
+      title="Staffing Solutions That Work"
+      subtitle="From daily workers to permanent hires, we deliver tailored recruitment strategies that align with your business objectives."
+      data-animate="fade-up"
+    />
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3" data-animate-stagger>
+      {
+        solutions.map((solution) => (
+          <Card class="flex flex-col" data-animate="fade-up">
+            <div
+              class={`flex h-12 w-12 items-center justify-center rounded-xl bg-${solution.color}-100 text-${solution.color}-600 dark:bg-${solution.color}-900/30 dark:text-${solution.color}-400`}
+            >
+              <Icon name={solution.icon} class="h-7 w-7" />
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+              {solution.title}
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              {solution.description}
+            </p>
+            <ul class="mt-4 flex-1 space-y-2">
+              {solution.features.map((feature) => (
+                <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <Icon
+                    name="solar:check-circle-bold-duotone"
+                    class="h-5 w-5 shrink-0 text-orange-500"
+                  />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))
+      }
+    </div>
+  </Container>
+</section>

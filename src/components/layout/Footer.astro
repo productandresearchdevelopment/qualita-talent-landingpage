@@ -1,0 +1,112 @@
+---
+import Container from "./Container.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<footer
+  class="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900"
+>
+  <Container class="py-12">
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Logo & Tagline -->
+      <div>
+        <a href="/" class="flex items-center">
+          <img
+            src="/qualita-talent.png"
+            alt="Qualita Talent"
+            class="h-14 w-auto dark:brightness-0 dark:invert"
+          />
+        </a>
+        <p class="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+          PT. Qualita Indonesia
+        </p>
+        <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+          Connecting businesses with exceptional talent. Your trusted partner
+          for daily worker and permanent contract staffing solutions.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3
+          class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-100"
+        >
+          Contact
+        </h3>
+        <ul class="mt-4 space-y-3 text-sm text-gray-500 dark:text-gray-400">
+          <li class="flex items-center gap-2">
+            <Icon name="solar:letter-bold-duotone" class="h-4 w-4 shrink-0" />
+            contact@qualita-indonesia.com
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="solar:letter-bold-duotone" class="h-4 w-4 shrink-0" />
+            career@qualita-indonesia.com
+          </li>
+          <li class="flex items-start gap-2">
+            <Icon
+              name="solar:map-point-bold-duotone"
+              class="h-4 w-4 shrink-0 mt-0.5"
+            />
+            Ruby Commercial, Summarecon, Jl. Bulevar Selatan Blok TD No.19, Marga
+            Mulya, Bekasi Utara, Kota Bekasi
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3
+          class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-gray-100"
+        >
+          Quick Links
+        </h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li>
+            <a
+              href="#solutions"
+              class="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              >Our Solutions</a
+            >
+          </li>
+          <li>
+            <a
+              href="#why-us"
+              class="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              >Why Choose Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#categories"
+              class="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              >Job Categories</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div
+      class="mt-10 border-t border-gray-200 pt-6 text-center dark:border-gray-800"
+    >
+      <p class="text-xs text-gray-500 dark:text-gray-400">
+        &copy; {new Date().getFullYear()} PT. Qualita Indonesia. All rights reserved.
+      </p>
+    </div>
+  </Container>
+</footer>
